@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("./images/space.jpg");
+  font-family: 'Oswald', sans-serif;
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 4em;
+  height: 1.5em;
+  font-weight: bold;
+  font-size: 48px;
+  color: rgb(255, 255, 0);
+  background-color: rgb(0, 0, 0);
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+.animated .header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  animation: header-appearence 3s ease-out forwards;
+}
+
+.astronaut {
+  display: none;
+}
+.animated .astronaut {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  animation:
+    appearance 2s ease-in forwards,
+    first-scale 500ms 2s ease-out 1,
+    second-scale 500ms 2.5s ease-in 1,
+    third-scale 500ms 3s ease-out 1,
+    fourth-scale 500ms 3.5s ease-in 1,
+    fifth-scale 500ms 4s ease-out 1,
+    sixth-scale 500ms 4.5s ease-in 1,
+    jumping 2s 5s linear infinite;
+}
+
+.earth {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.animated .earth {
+  animation: roll 70s linear infinite;
+}
+
+@keyframes roll {
+  from {transform: translateX(-50%) rotate(0deg);}
+  to {transform: translateX(-50%) rotate(360deg);}
+}
+
+@keyframes appearance {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    left: 50%;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.0);
+    left: 70%;
+  }
+}
+
+@keyframes first-scale {
+  from {
+    transform: translate(-50%, -50%)  scale(1.0);
+    left: 70%;
+  }
+
+  to {
+    transform: translate(-50%, -50%)  scale(0.8);
+    left: 65%;
+  }
+}
+
+@keyframes second-scale {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    left: 65%;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.0);
+    left: 70%;
+  }
+}
+
+@keyframes third-scale {
+  from {
+    transform: translate(-50%, -50%) scale(1.0);
+    left: 70%;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(0.9);
+    left: 68%;
+  }
+}
+
+@keyframes fourth-scale {
+  from {
+    transform: translate(-50%, -50%) scale(0.9);
+    left: 68%;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.0);
+    left: 70%;
+  }
+}
+
+@keyframes fifth-scale {
+  from {
+    transform: translate(-50%, -50%) scale(1.0);
+    left: 70%;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(0.95);
+    left: 69%;
+  }
+}
+
+@keyframes sixth-scale {
+  from {
+    transform: translate(-50%, -50%) scale(0.95);
+    left: 69%;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.0);
+    left: 70%;
+  }
+}
+
+@keyframes jumping {
+  from {
+    top: 50%;
+  }
+
+  50% {
+    top: 52%;
+  }
+
+  to {
+    top: 50%;
+  }
+}
+
+@keyframes header-appearence {
+  from {
+    font-size: 0;
+  }
+
+  to {
+    font-size: 400px;
+  }
+}
