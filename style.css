@@ -45,8 +45,10 @@ body {
 .astronaut {
   display: none;
 }
+
 .animated .astronaut {
   display: block;
+  width: 18vw;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,6 +66,7 @@ body {
 }
 
 .earth {
+  width: 100vw;
   position: absolute;
   top: 60%;
   left: 50%;
@@ -78,6 +81,10 @@ body {
 @keyframes roll {
   from {transform: translateX(-50%) rotate(0deg);}
   to {transform: translateX(-50%) rotate(360deg);}
+
+  /* from {rotate(0deg) transform: translateX(-50%);}
+  to {transform: rotate(360deg) transform: translateX(-50%);}
+  creates different awesome animation */
 }
 
 @keyframes appearance {
@@ -184,6 +191,6 @@ body {
   }
 
   to {
-    font-size: 400px;
+    font-size: 20vw;
   }
 }
